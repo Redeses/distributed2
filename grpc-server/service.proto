@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package myservice;
+
+service XMLGetter {
+  rpc returnFromXML (xmlGetRequest) returns (xmlGetResponse);
+}
+
+message xmlGetRequest {
+  string name = 1;
+}
+
+message xmlGetResponse {
+  string message = 1;
+}
+
+service XMLSender {
+  rpc addToXML (xmlSendRequest) returns (xmlSendResponse);
+}
+
+message xmlSendRequest {
+  string name = 1;
+}
+
+message xmlSendResponse {
+  string message = 1;
+}
